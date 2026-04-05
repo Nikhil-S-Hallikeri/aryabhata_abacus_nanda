@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Play } from 'lucide-react';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import FloatingCTA from '../components/FloatingCTA.jsx';
@@ -60,7 +60,7 @@ const GalleryPage = () => {
                         layout
                         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
                     >
-                        <AnimatePresence>
+                        <AnimatePresence mode='popLayout'>
                             {filteredImages.map((img, index) => (
                                 <motion.div
                                     layout
@@ -70,13 +70,29 @@ const GalleryPage = () => {
                                     transition={{ duration: 0.3 }}
                                     key={`${img.src}-${index}`}
                                     onClick={() => setSelectedImage(img)}
-                                    className="group relative rounded-2xl overflow-hidden aspect-4/3 shadow-md cursor-pointer"
+                                    className="group relative rounded-2xl overflow-hidden aspect-4/3 shadow-md cursor-pointer bg-gray-100"
                                 >
-                                    <img
-                                        src={img.src}
-                                        alt={`${img.category} view`}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                    />
+                                    {img.type === 'video' ? (
+                                        <div className="relative w-full h-full">
+                                            <video
+                                                src={img.src}
+                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                muted
+                                                playsInline
+                                            />
+                                            <div className="absolute inset-0 flex items-center justify-center">
+                                                <div className="bg-white/30 backdrop-blur-md p-4 rounded-full border border-white/40 shadow-xl group-hover:scale-110 transition-transform">
+                                                    <Play className="w-8 h-8 text-white fill-white" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <img
+                                            src={img.src}
+                                            alt={`${img.category} view`}
+                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        />
+                                    )}
                                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <div className="absolute top-4 left-4">
                                             <span className="text-white font-bold text-sm tracking-wider border border-white/30 bg-black/30 px-3 py-1 rounded-full backdrop-blur-md">
@@ -107,23 +123,36 @@ const GalleryPage = () => {
                         onClick={() => setSelectedImage(null)}
                         className="fixed inset-0 z-100 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
                     >
-                        <motion.img
-                            src={selectedImage.src}
-                            alt={selectedImage.category}
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
-                            onClick={(e) => e.stopPropagation()}
-                            className="max-w-full max-h-[90vh] rounded-lg shadow-2xl object-contain"
-                        />
-                        <button
-                            onClick={() => setSelectedImage(null)}
-                            className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
+                        <div className="relative w-full max-w-5xl max-h-[90vh] flex items-center justify-center">
+                            {selectedImage.type === 'video' ? (
+                                <div className="w-full aspect-video bg-black rounded-xl overflow-hidden shadow-2xl">
+                                    <video
+                                        src={selectedImage.src}
+                                        controls
+                                        autoPlay
+                                        className="w-full h-full"
+                                    />
+                                </div>
+                            ) : (
+                                <motion.img
+                                    src={selectedImage.src}
+                                    alt={selectedImage.category}
+                                    initial={{ scale: 0.9, opacity: 0 }}
+                                    animate={{ scale: 1, opacity: 1 }}
+                                    exit={{ scale: 0.9, opacity: 0 }}
+                                    onClick={(e) => e.stopPropagation()}
+                                    className="max-w-full max-h-[90vh] rounded-lg shadow-2xl object-contain"
+                                />
+                            )}
+                            <button
+                                onClick={() => setSelectedImage(null)}
+                                className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors p-2"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

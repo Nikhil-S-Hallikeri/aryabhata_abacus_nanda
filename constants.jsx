@@ -1,252 +1,354 @@
-import React from 'react';
+import abacus1 from './assets/abacus1.jpg';
+import abacus2 from './assets/abacus2.png';
+import abacus3 from './assets/abacus3.png';
+import tutorial1 from '../Deepa/assets/tutorial-1.jpg';
+import tutorial2 from '../Deepa/assets/tutorial-2.jpg';
+import jnv1 from '../Deepa/assets/jnv-1.jpg';
+import jnv2 from '../Deepa/assets/jnv-3.jpg';
+import hand from '../Deepa/assets/hadwrting-classes-1.jpg';
+
+// Gallery Images
+import mehandi_main from './assets/gallery/mehandi/mehandi-hero.jpg';
+import mehandi_detail1 from './assets/gallery/mehandi/image40.jpeg';
+import aari_main from './assets/gallery/aari/image43.jpeg';
+import kuch_main from './assets/gallery/aari/image41.jpeg';
+import rangoli_main from './assets/gallery/rangoli/image1.jpeg';
+import painting_main from './assets/gallery/arts/image6.jpeg';
+import drawing_main from './assets/gallery/arts/image53.jpeg';
+import embroidery_main from './assets/gallery/aari/image42.jpeg';
+
 import {
     BookOpen, Calculator, Award, Calendar, GraduationCap,
     Users, ShieldCheck, Star, Brain, Globe, FlaskConical,
-    MessageSquare, Target, Palette
+    MessageSquare, Target, Palette, Flower2, Scissors,
+    Waves, Sparkles, Brush, Feather, Pencil
 } from 'lucide-react';
 
 export const ACADEMY_INFO = {
-    name: "Aryabhata Abacus & Vedic Maths",
-    location: "Bankapur Branch",
-    instructor: "Jyoti Hallayanavarmath",
-    qualifications: "M.Sc Mathematics",
-    role: "Senior Mathematics Lecturer",
-    affiliations: ["Greenary Academy (R)", "ISO Certified Company"],
-    phone: "919876543210", // Placeholder
-    whatsapp: "919876543210" // Placeholder
+    name: "Aryabhata Abacus & Vedic Maths Hosaritti",
+    email: "hattikotinanda@gmail.com",
+    location: "Hosaritti Branch",
+    instructor: "Nanda B Hattikoti",
+    qualifications: "BVA",
+    role: "Lecturer / Artist",
+    affiliations: ["Aryabhata Abacus & Vedic Maths", "ISO Certified Company"],
+    phone: "+91 81471 46702",
+    whatsapp: "+91 81471 46702"
 };
 
-export const PROGRAMS = [
+export const MY_SERVICES = [
     {
-        id: "abacus",
-        title: "Abacus Classes",
-        headline: "Transform Your Child into a \"Human Calculator\" with Aryabhata Abacus",
-        description: "Boost your child's mental math speed, concentration, and cognitive skills through our certified Aryabhata Vedic Maths curriculum.",
-        detailDescription: "Aryabhata Abacus & Vedic Maths (a unit of Greenary Academy) is North Karnataka's premier ISO 9001:2015 Certified institute. With over 15 years of excellence, we don't just teach math; we activate your child's brain. Our program is designed to move children away from calculator dependency and toward mental mastery, as recognized in the 6th District Level Abacus Awards in Haveri.",
-        icon: <Calculator className="w-8 h-8 text-primary" />,
-        image: "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?w=800&h=600&fit=crop",
-        secondImage: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=600&fit=crop",
+        id: "mehandi-designs",
+        title: "Mehandi Designs",
+        headline: "Exquisite Mehandi Art for Every Special Moment",
+        description: "Intricate and beautiful Mehandi designs for weddings, festivals, and special events.",
+        detailDescription: "We specialize in traditional and modern Mehandi designs, including bridal Mehandi, Arabic patterns, and custom artistic styles. Our work is known for its precision, dark stain, and creative flair. We use only 100% natural and organic henna, ensuring a safe and beautiful experience for all our clients.\n\nOur portfolio features incredibly tiny and precise motifs, personalized bridal initials (like custom V-D branding), and intricate wrist-banding that flows perfectly with your attire. Every design is a hand-drawn masterpiece tailored to your vision.",
+        icon: <Flower2 className="w-8 h-8 text-primary" />,
+        image: mehandi_main,
         features: [
-            "Whole Brain Development: Simultaneous activation of both Left (Logical) and Right (Creative) brain hemispheres.",
-            "Photographic Memory: Enhances the ability to visualize numbers and solve complex arithmetic instantly.",
-            "Competitive Edge: Specialized training for State and District level competitions and Navodaya exams.",
-            "10x Concentration: Proven techniques to improve focus, listening skills, and academic self-reliance."
+            "Bridal Mehandi Specialist: Full hand & leg coverage with initials.",
+            "Arabic & Indo-Western Styles: Elegant and modern flowing patterns.",
+            "Natural & Safe Henna: 100% organic, chemical-free for dark stains.",
+            "Intricate Mandala Shapes: Perfect symmetry and geometric precision."
         ],
         whyChoose: [
-            { title: "Scientifically Structured", desc: "Based on the ancient abacus tool combined with modern mental visualization techniques." },
-            { title: "Recognized Excellence", desc: "Organized the State Level Abacus Competition and winners of multiple District Awards." },
-            { title: "Flexible Learning", desc: "Weekend batches specifically designed for school-going children in Bankapur and Haveri." },
-            { title: "Life-Long Skills", desc: "Improves not just math, but also self-confidence, speed, and accuracy in all life challenges." }
-        ],
-        brainScience: {
-            left: ["Logical Thinking & Reasoning", "Number Skills & Calculation", "Analysis & Precision"],
-            right: ["Photographic Memory & Visualization", "Imagination & Intuition", "Creativity & Holistic Thought"]
-        },
-        offerings: [
-            "Abacus & Vedic Maths: Primary focus on speed and brain gymnastics.",
-            "Calligraphy & Handwriting: Improving fine motor skills.",
-            "Competitive Coaching: Special batches for Navodaya and scholarship exams.",
-            "Holistic Skills: Spoken English, Yoga, and Karate classes are also available at the center."
-        ],
-        cta: {
-            text: "Give your child the Aryabhata advantage today. Visit our Bankapur branch or call for a Free Demo.",
-            location: "Opp. J.H. Patel Circle, Behind Geleyara Balaga Primary School, Haveri."
-        }
-    },
-    {
-        id: "fashion-designing",
-        title: "Fashion Designing",
-        headline: "Empower Your Creativity at the Aryabhata Institute of Fashion Designing",
-        description: "Unlock your potential in the world of fashion with Haveri’s premier ISO 9001:2015 Certified design institute.",
-        detailDescription: "Unlock your potential in the world of fashion with Haveri’s premier ISO 9001:2015 Certified design institute. A unit of Greenary Academy, we offer attractive vocational courses with a reliable fee structure designed for aspiring designers, entrepreneurs, and hobbyists. From traditional Aari work to modern fashion illustration, we provide the skills you need to start your own boutique or career.",
-        icon: <Palette className="w-8 h-8 text-primary" />,
-        image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop",
-        secondImage: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&h=600&fit=crop",
-        features: [
-            "Aari Work & Hand Embroidery: Master the intricate art of traditional bridal and boutique work.",
-            "Professional Makeup & Mehandi: Complete bridal transformation and artistic henna design modules.",
-            "Fashion Drawing & Illustration Masterclass: Learn to put your creative visions on paper.",
-            "Boutique Management: Gain the business knowledge to start and run your own fashion studio."
-        ],
-        whyChoose: [
-            { title: "ISO Certified Standards", desc: "Quality education recognized by international standards." },
-            { title: "Affordable Excellence", desc: "High-quality training with a \"Reliable Fee Structure\" (Basics starting from ₹1500)." },
-            { title: "Practical Training", desc: "Hands-on experience with real fabric, Aari frames, and makeup kits." },
-            { title: "Haveri's Trusted Center", desc: "Centrally located at Rajendra Nagar with 15+ years of teaching legacy." }
-        ],
-        durations: [
-            { title: "Certificate in Basics", duration: "3 Months", desc: "Foundation course" },
-            { title: "Diploma in Fashion Design", duration: "6 Months", desc: "Advanced techniques" },
-            { title: "Professional Master Course", duration: "1 Year", desc: "Complete industry readiness" }
-        ],
-        promo: {
-            title: "🔥 NEW YEAR 2026 SPECIAL OFFER",
-            discount: "20% OFF on all 3-month courses!",
-            validity: "Offer valid until January 05.",
-            bonus: "Bonus: Present our digital pamphlet and get an additional 5% discount on spot admissions."
-        },
-        cta: {
-            text: "Start your fashion journey today. Limited seats available for the new batch!",
-            location: "Rajendra Nagar, Haveri"
-        }
-    },
-    {
-        id: "tuitions",
-        title: "Regular School Tuitions",
-        headline: "Expert Tuitions for Academic Excellence: Class 1 to Class 10",
-        description: "Personalized attention for students from primary to high school, focusing on fundamental concepts and exam excellence.",
-        detailDescription: "Is your child struggling with complex school subjects or losing confidence in exams? At Greenary Academy, we provide a nurturing and disciplined environment where learning becomes a joy. Led by Jayalakshmi Ma’am (MSc Mathematics), our systematic teaching approach ensures every student masters their school curriculum and achieves top marks in their board and school exams.",
-        icon: <BookOpen className="w-8 h-8 text-primary" />,
-        image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop",
-        secondImage: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&h=600&fit=crop",
-        features: [
-            "Subject Mastery (Focus on Maths & Science): In-depth explanation of concepts to build a strong foundation, especially in Mathematics and Science.",
-            "Small Batch Sizes: Personalized attention for every student, ensuring no child is left behind in a crowded classroom.",
-            "Homework & Assignment Support: Daily guidance to help students complete school work while truly understanding the logic behind it.",
-            "Regular Progress Monitoring: Periodic tests and parent-teacher meetings to track and improve performance consistently."
-        ],
-        whyChoose: [
-            { title: "Highly Qualified Faculty", desc: "Benefit from the expertise of an MSc Mathematics Lecturer with years of teaching experience." },
-            { title: "ISO 9001:2015 Certified System", desc: "We follow an international standard of educational management for predictable, high-quality results." },
-            { title: "Safe & Disciplined Environment", desc: "A professional academy setting located conveniently at the Bankapur branch." },
-            { title: "Exam-Oriented Preparation", desc: "Special focus on 7th, 8th, 9th, and 10th-grade board exam preparation and time management." }
-        ],
-        durations: [
-            { title: "Primary Section", duration: "Class 1-4", desc: "All subjects - focus on basics." },
-            { title: "Middle School", duration: "Class 5-7", desc: "State & CBSE Syllabus covered." },
-            { title: "High School", duration: "Class 8-10", desc: "Specialized batches for Maths, Science, English." }
-        ],
-        keyDetails: [
-            { label: "Batch Timings", value: "Evening batches (Post-school hours)." },
-            { label: "Focus Area", value: "Concept clearing, Note-making, and Weekly Tests." },
-            { label: "Location", value: "Opp. J.H. Patel Circle, Behind Geleyara Balaga Primary School, Haveri." }
-        ],
-        cta: {
-            text: "Give your child the academic edge they deserve. Enroll now for the new term!",
-            location: "Bankapur Branch"
-        }
-    },
-    {
-        id: "navodaya",
-        title: "Navodaya Coaching",
-        headline: "Secure Your Child’s Future: Expert Navodaya Entrance Coaching",
-        description: "Intensive training for JNV entrance exams. We provide structured materials and rigorous practice to ensure selection.",
-        detailDescription: "Admission into Jawahar Navodaya Vidyalayas (JNV) is a dream for every student. At Greenary Academy, we provide specialized coaching for the JNV Selection Test (JNVST). Under the expert guidance of Jayalakshmi Ma'am (MSc Mathematics), we transform 5th-grade students into high-achievers through a rigorous, disciplined, and result-oriented curriculum at our Bankapur branch.",
-        icon: <GraduationCap className="w-8 h-8 text-primary" />,
-        image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop",
-        secondImage: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&h=600&fit=crop",
-        features: [
-            "Mental Ability Mastery: Intensive training in 10 different types of figure-based reasoning and logical patterns (50% of the exam).",
-            "Arithmetic Excellence: Simplifying complex math problems with Vedic Math techniques to ensure 100% accuracy and speed.",
-            "Language Proficiency: Building strong reading comprehension and grammar skills in Kannada/English.",
-            "The Mock Test Series: Weekly OMR-based practice exams to eliminate exam fear and master time management."
-        ],
-        whyChoose: [
-            { title: "Expert Faculty", desc: "Classes led by a Mathematics Lecturer (MSc) who understands the nuances of competitive exams." },
-            { title: "ISO 9001:2015 Standards", desc: "A systematic approach to coaching that ensures no topic is left behind." },
-            { title: "Daily Practice Materials", desc: "Specialized workbooks and previous years' question paper analysis." },
-            { title: "Proven Track Record", desc: "Part of an academy recognized by the District Education Department for academic excellence." }
+            { title: "Artistic Precision", desc: "Detailed and delicate patterns with clean, fine lines." },
+            { title: "Custom Symbols", desc: "Personalized initials and symbols for your special day." },
+            { title: "Experienced Artist", desc: "Years of expertise in various regional and modern styles." },
+            { title: "Home Services", desc: "Available for home visits for bridal and group bookings." }
         ],
         offerings: [
-            "Comprehensive study materials.",
-            "OMR sheet handling practice.",
-            "Doubt-clearing sessions on weekends.",
-            "Performance tracking and parent-teacher updates.",
-            "Motivation sessions to build student confidence."
+            "Full Bridal Mehandi Packages",
+            "Bridegroom Special Mehandi",
+            "Sangeet & Mehandi Night Group Bookings",
+            "Arabic & Minimalist Designer Patterns",
+            "Traditional Full Arm Designs"
         ],
         keyDetails: [
-            { label: "Target Grade", value: "Students currently in 4th and 5th Standard." },
-            { label: "Batch Timings", value: "Weekend and Evening batches available." },
-            { label: "Location", value: "Opp. J.H. Patel Circle, Behind Geleyara Balaga Primary School, Haveri." }
+            { label: "Material Used", value: "Organic Handmade Henna Paste" },
+            { label: "Average Time", value: "2 to 6 hours for Bridal" },
+            { label: "Stain Duration", value: "Typically 1 to 2 weeks" }
         ],
         cta: {
-            text: "Limited seats available for the upcoming Navodaya Entrance batch. Don't wait until it's too late!",
-            location: "Bankapur Branch"
+            text: "Ready to beautify your hands? Book your Mehandi appointment today!",
+            location: "Hosaritti Branch"
         }
     },
     {
-        id: "weekend",
-        title: "Weekend Classes",
-        description: "Flexible learning modules for working parents' children, focusing on foundational maths and personality development.",
-        icon: <Calendar className="w-8 h-8 text-primary" />,
-        image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&h=600&fit=crop",
-        features: ["Concept Clarity", "Extra-Curricular Focus", "Small Batches", "Flexible Timings"]
-    },
-    {
-        id: "vedic-maths-advanced",
-        title: "Vedic Maths Advanced",
-        description: "Master complex calculations with ancient techniques. Ideal for high school students looking to gain a competitive edge.",
-        icon: <Brain className="w-8 h-8 text-primary" />,
-        image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=600&fit=crop",
-        features: ["Lightning Fast Speed", "Mental Agility", "Algebra Shortcuts", "Ancient Math Wisdom"]
-    },
-    {
-        id: "olympiad",
-        title: "Olympiad Prep",
-        description: "Specialized coaching for Science, Maths, and Cyber Olympiads. We focus on advanced problem-solving techniques.",
-        icon: <Target className="w-8 h-8 text-primary" />,
-        image: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=800&h=600&fit=crop",
-        features: ["Advanced Concepts", "Analytical Skills", "Mock Olympiad Tests", "International Standard"]
-    },
-    {
-        id: "ntse",
-        title: "NTSE Coaching",
-        description: "Preparation for National Talent Search Examination. We cover MAT and SAT sections with expert guidance.",
-        icon: <Award className="w-8 h-8 text-primary" />,
-        image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=600&fit=crop",
-        features: ["MAT Specialist", "Mental Ability Training", "Previous Year Papers", "Competitive Prep"]
-    },
-    {
-        id: "science-robotics",
-        title: "Science & Robotics",
-        description: "Hands-on experience with basic robotics and science experiments to foster innovation and technical skills.",
-        icon: <FlaskConical className="w-8 h-8 text-primary" />,
-        image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop",
-        features: ["Practical Learning", "STEM Education", "Critical Thinking", "Project Based"]
-    },
-    {
-        id: "spoken-english",
-        title: "Spoken English & Communication",
-        headline: "Master the Art of Conversation: Spoken English for All Ages",
-        description: "Build confidence and fluency in communication. Our program focuses on soft skills, public speaking, and real-world interactions.",
-        detailDescription: "Language is the key to opportunity. Whether you are a student looking to excel in interviews, a professional aiming for career growth, or an elder wanting to connect with the modern world, our Spoken English program is designed for you. At Greenary Academy, we move beyond textbook grammar to focus on real-world fluency, helping you speak English with confidence and clarity.",
-        icon: <MessageSquare className="w-8 h-8 text-primary" />,
-        image: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&h=600&fit=crop",
-        secondImage: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop",
+        id: "aari-work",
+        title: "Aari Work (Embroidery)",
+        headline: "Handcrafted Elegance: Professional Aari Embroidery",
+        description: "Premium Aari work for blouses, sarees, and designer wear with detailed precision.",
+        detailDescription: "Experience the timeless beauty of Aari embroidery. We create stunning hand-embroidered designs using beads, sequins, and threads to transform your garments into masterpieces. Our skilled artisans use the traditional long needle technique to create intricate patterns that machine embroidery cannot replicate.\n\nWe specialize in heavy bridal blouse work, where every stitch is a testament to our craftsmanship. From Zardosi and Maggam work to delicate bead-stitching, we ensure your special attire stands out with unparalleled elegance and detail.",
+        icon: <Scissors className="w-8 h-8 text-primary" />,
+        image: aari_main,
         features: [
-            "Phonetics & Pronunciation: Mastering basic sounds, vowels, and consonants to reduce mother-tongue influence.",
-            "Grammar Foundation: Simplified lessons on tenses, sentence structure, and parts of speech.",
-            "Daily Conversations: Practical training for simple dialogues, shopping, traveling, and social interactions.",
-            "The Art of Self-Introduction: Crafting a powerful personal introduction for social and professional settings.",
-            "Word Mastery: Building a rich vocabulary for clear and effective expression."
+            "Bridal Blouse Customization: Heavy Zardosi and Maggam designs.",
+            "Intricate Neckline Detailing: Using high-quality beads and stones.",
+            "Custom Sleeve Patterns: Elaborate hand-stitched floral & geometric art.",
+            "Premium Finish: Secure stitching for durability and lasting shine."
         ],
-        specialFeature: {
-            title: "Spoken English for Elders",
-            subtitle: "It's Never Too Late to Learn!",
-            desc: "We offer specialized, stress-free batches for senior citizens and elders. Our patient and supportive teaching environment helps elders learn English for travel, technology use, and speaking with grandchildren, ensuring they never feel left behind in a digital world."
-        },
         whyChoose: [
-            { title: "ISO 9001:2015 Certified Quality", desc: "A systematic and professional approach to language training." },
-            { title: "Interactive Learning", desc: "Focus on 'Speaking' rather than just 'Writing.' We use role-plays and group discussions." },
-            { title: "Expert Faculty Guidance", desc: "Under the academic supervision of Jayalakshmi Ma'am (MSc Mathematics)." },
-            { title: "Flexible Batches", desc: "Morning and evening slots available to suit students, housewives, and working professionals." }
+            { title: "Handcrafted Luxury", desc: "Every piece is a unique work of art crafted by expert hands." },
+            { title: "Premium Materials", desc: "Finest silk threads, crystals, and authentic Zari." },
+            { title: "Design Mockups", desc: "Visualizing the design on your specific blouse cut." },
+            { title: "Professional Finish", desc: "Perfectly balanced thread tension for a smooth feel." }
+        ],
+        offerings: [
+            "Bridal Blouse Full Aari Work",
+            "Neckline & Sleeve Border Work",
+            "Designer Saree Border Embroidery",
+            "Zardosi & Bead Embellishments",
+            "Custom Logo & Ethnic Pattern Designs"
         ],
         keyDetails: [
-            { label: "Course Levels", value: "Basic to Intermediate." },
-            { label: "Batch Type", value: "Personal attention with limited students." },
-            { label: "Location", value: "Opp. J.H. Patel Circle, Behind Geleyara Balaga Primary School, Haveri." }
+            { label: "Technique", value: "Traditional Long Needle Aari Work" },
+            { label: "Materials", value: "Zari, Beads, Silk Thread, Crystals" },
+            { label: "Turnaround", value: "3 to 10 days for heavy designs" }
         ],
         cta: {
-            text: "Stop hesitating and start speaking. Join our next batch and transform your personality!",
-            location: "Bankapur Branch"
+            text: "Transform your garments with exquisite embroidery. Contact us now!",
+            location: "Hosaritti Branch"
+        }
+    },
+    {
+        id: "saree-kuch",
+        title: "Saree Kuch / Saree Work",
+        headline: "Adding the Perfect Finish to Your Saree",
+        description: "Traditional and modern Saree Kuch (tassels) and beadwork to enhance your silk sarees.",
+        detailDescription: "Our specialized Saree Kuch services add a touch of traditional elegance to your silk sarees. We use high-quality silk threads and decorative beads to create beautiful, durable tassels. As seen in our work, we specialize in multi-colored silk tassels that perfectly complement the saree pallu.\n\nFrom contrast color matching to complex designer beadwork, our 'Kuch' or tassel work is not just a finish but an artistic addition that defines the premium look of a Kanchipuram or Banarasi saree.",
+        icon: <Waves className="w-8 h-8 text-primary" />,
+        image: kuch_main,
+        features: [
+            "Multi-colored Silk Tassels: Harmonized with saree borders.",
+            "Beaded Pallu Edge: Premium bead accents for a royal look.",
+            "Designer Crochet Kuch: Modern patterns and knotting styles.",
+            "High-Grade Silk Threads: Using 100% pure silk for a soft feel."
+        ],
+        whyChoose: [
+            { title: "Traditional Heritage", desc: "Authentic and experienced Saree Kuch techniques." },
+            { title: "Contrast Matching", desc: "Expert selection of thread colors to pop against the saree." },
+            { title: "Durability", desc: "Secure knotting that maintains its shape for years." },
+            { title: "Express Service", desc: "Quick turnaround for your urgent festive needs." }
+        ],
+        offerings: [
+            "Silk Thread Crochet Kuch",
+            "Bridal Crystal Saree Kuch",
+            "Layered Multi-color Tassels",
+            "Traditional Hand-Knotting",
+            "Heavy Bead & Stone Pallu Work"
+        ],
+        keyDetails: [
+            { label: "Service Time", value: "1 to 3 days per saree" },
+            { label: "Styles", value: "Crochet, Bead, Traditional, Modern" },
+            { label: "Material", value: "Premium Silk Threads & Quality Beads" }
+        ],
+        cta: {
+            text: "Give your silk saree the perfect finish it deserves. Talk to us!",
+            location: "Hosaritti Branch"
+        }
+    },
+    {
+        id: "rangoli-portraits",
+        title: "Rangoli Portraits",
+        headline: "Lifelike Rangoli Art for Special Events",
+        description: "Specialized in creating realistic Rangoli portraits and traditional floor art.",
+        detailDescription: "Elevate your celebrations with stunning, large-scale Rangoli portraits. I specialize in realistic depictions of spiritual figures, deities, and honored guests for festivals and weddings. As demonstrated in my most ambitious works, I can create full floor-to-wall scale masterpieces featuring complex life-sized figures.\n\nUsing carefully blended, high-pigment powders, I bring life and emotion to every portrait. Whether it is a traditional deity for a temple event or a commemorative portrait, our rangoli art provides a breathtaking center-piece for any venue.",
+        icon: <Sparkles className="w-8 h-8 text-primary" />,
+        image: rangoli_main,
+        features: [
+            "Realistic Portrait Realism: Capturing facial expressions and depth.",
+            "Devotional Deity Art: Large scale portraits of gods and saints.",
+            "Ceremonial Floor Arches: Intricate traditional bordering.",
+            "Vibrant Color Blending: Professional hand-mixed powder shades."
+        ],
+        whyChoose: [
+            { title: "Unmatched Realism", desc: "Portrait-grade accuracy using traditional powder mediums." },
+            { title: "Large Scale Capability", desc: "Able to cover entire entrance halls or large temple floors." },
+            { title: "Speed & Performance", desc: "Efficient execution for live event atmospheres." },
+            { title: "Durability", desc: "Techniques used to ensure the art stays crisp for the event duration." }
+        ],
+        offerings: [
+            "Saint & Deity Portraits (Realistic)",
+            "Wedding Entrance Floor Art",
+            "Thematic Corporate Rangoli",
+            "Village Fair & Temple Scale Art",
+            "Festive Specials (Deepavali/Sankranti)"
+        ],
+        keyDetails: [
+            { label: "Setup Time", value: "4 to 12 hours based on scale" },
+            { label: "Longevity", value: "Semi-permanent event duration" },
+            { label: "Artist Reach", value: "Haveri District & beyond" }
+        ],
+        cta: {
+            text: "Create a stunning first impression at your event. Book an artist!",
+            location: "Hosaritti Branch"
+        }
+    },
+    {
+        id: "paintings",
+        title: "Paintings",
+        headline: "Custom Canvas & Portrait Paintings",
+        description: "Hand-painted masterpieces on canvas and walls, specializing in portrait realism.",
+        detailDescription: "Led by a BVA-qualified artist, we provide premium painting services specializing in acrylic and oil portrait realism. As seen in our studio sessions, I work closely with students and clients to capture life in every stroke.\n\nFrom large canvas commissions for your office to intimate family portraits, we ensure every piece tells a story through rich texture and professional color blending. We also specify in wall murals for modern homes and commercial spaces.",
+        icon: <Brush className="w-8 h-8 text-primary" />,
+        image: painting_main,
+        features: [
+            "Acrylic & Oil Portraits: Exceptional facial realism and depth.",
+            "Commissioned Masterpieces: Artwork tailored to your space.",
+            "Studio Sessions: Watch the art come to life in our studio.",
+            "Wall Murals: Transforming interiors into artistic statements."
+        ],
+        whyChoose: [
+            { title: "Qualified Artist", desc: "Bachelor of Visual Arts (BVA) expert guidance." },
+            { title: "Portrait Specialist", desc: "High accuracy in capturing individual personality." },
+            { title: "Longevity", desc: "Using archival-grade paints and protective varnishes." },
+            { title: "Personalized Consult", desc: "Detailed discussion on medium, style, and framing." }
+        ],
+        offerings: [
+            "Custom Canvas Portrait Painting",
+            "Interior Wall Mural Art",
+            "Acrylic Scenic Landscapes",
+            "Charcoal & Graphite Realism",
+            "Commemorative Event Paintings"
+        ],
+        keyDetails: [
+            { label: "Artist Qual.", value: "BVA (Bachelor of Visual Arts)" },
+            { label: "Mediums", value: "Oil, Acrylic, Charcoal, Mixed" },
+            { label: "Framing", value: "Available on request" }
+        ],
+        cta: {
+            text: "Want a custom masterpiece? Let's discuss your artistic vision!",
+            location: "Hosaritti Branch"
+        }
+    },
+    {
+        id: "embroidery-designs",
+        title: "Embroidery Designs",
+        headline: "Versatile Embroidery for All Fabrics",
+        description: "Creative hand and machine embroidery designs for a variety of clothing and home decor.",
+        detailDescription: "Beyond Aari work, we offer a wide range of embroidery services including cross-stitch, satin stitch, and modern embroidery patterns to decorate your fabrics. Embroidery adds a tactile and visual depth that enhances even the simplest garments.\n\nWe provide services for both personal attire and home textiles like cushion covers, table runners, and wall hangings. I specialize in traditional chain-stitching and modern floral patterns that breathe personality into any textile.",
+        icon: <Feather className="w-8 h-8 text-primary" />,
+        image: embroidery_main,
+        features: [
+            "Detailed Chain-Stitch Work: Durable and elegant motifs.",
+            "Custom Floral & Ethnic Patterns: Tailored to your favorite colors.",
+            "Fabric Revitalization: Restoring old garments with artistic patches.",
+            "Home Accessory Decor: Customized cushion & table linen art."
+        ],
+        whyChoose: [
+            { title: "Meticulous Detail", desc: "Single-thread precision for a high-end refined look." },
+            { title: "Creative Versatility", desc: "Designs applied to cotton, silk, and denim effortlessly." },
+            { title: "Fabric Safety", desc: "Careful handling of delicate and antique fabrics." },
+            { title: "Hand-Finished", desc: "The unique character of handmade textile art." }
+        ],
+        offerings: [
+            "Custom Kurti & Suit Embroidery",
+            "Artistic Cushion & Pillow Work",
+            "Traditional Indian Stitch Patterns",
+            "Appliqué & Patchwork Restoration",
+            "Monogramming for Personal Items"
+        ],
+        keyDetails: [
+            { label: "Service", value: "Professional Hand Embroidery" },
+            { label: "Order Type", value: "Individual & Bulk Commissions" },
+            { label: "Location", value: "Hosaritti Branch" }
+        ],
+        cta: {
+            text: "Add a touch of handcrafted detail to your wardrobe. Email us!",
+            location: "Hosaritti Branch"
         }
     }
 ];
 
+export const CLASSES_OFFERED = [
+    {
+        id: "abacus-classes",
+        title: "Abacus Classes",
+        headline: "Unlock Your Child's Mental Potential",
+        description: "Master mental math and improve concentration through our certified Abacus training program.",
+        detailDescription: "Our Abacus program is designed for children to develop speed and accuracy in calculations. It activates both sides of the brain, improving focus, memory, and logical thinking. Aryabhata Abacus & Vedic Maths is a premier institute for brain development. We don't just teach math; we activate your child's brain.\n\nAs seen in our classroom material, students learn to visualize the abacus tool, performing complex multi-digit calculations mentally with incredible accuracy. This foundation builds confidence that extends beyond mathematics.",
+        icon: <Calculator className="w-8 h-8 text-primary" />,
+        image: abacus2,
+        secondImage: abacus3,
+        features: [
+            "Whole Brain Development: Left (Logical) & Right (Creative) activation.",
+            "Photographic Memory Training: Instant number visualization.",
+            "Competitive Excellence: State & District level prep.",
+            "Focus Enhancement: Proven methods to boost school concentration."
+        ],
+        whyChoose: [
+            { title: "Scientific Framework", desc: "Ancient calculation tools meet modern brain development." },
+            { title: "Global Certification", desc: "ISO 9001:2015 Quality standards." },
+            { title: "Life-Long Confidence", desc: "Accuracy and speed that empowers future learning." },
+            { title: "Dedicated Batches", desc: "Age-appropriate learning groups for personalized care." }
+        ],
+        brainScience: {
+            left: ["Logical Thinking", "Number Skills", "Analysis"],
+            right: ["Photographic Memory", "Creativity", "Visualization"]
+        },
+        offerings: [
+            "9-Level Sequential Abacus Course",
+            "Fast-Track Vedic Maths (Grade 9+)",
+            "Championship Coaching (State/District)",
+            "Progressive Skill Certification",
+            "Mental Math Speed Training"
+        ],
+        keyDetails: [
+            { label: "Age Bracket", value: "5 to 14 Years" },
+            { label: "Batches", value: "Weekdays & Weekends" },
+            { label: "Quality", value: "ISO 9001:2015 Certified" }
+        ],
+        cta: {
+            text: "Give your child the Aryabhata advantage today. Call for a Free Demo.",
+            location: "Hosaritti Branch"
+        }
+    },
+    {
+        id: "drawing-classes",
+        title: "Drawing Classes",
+        headline: "Nurturing Creativity Through Fine Art",
+        description: "Master the fundamentals of drawing, shading, and painting in a professional studio environment.",
+        detailDescription: "Our drawing classes are founded on the principles of academic fine art. Guided by a BVA-qualified mentor, students explore basic shapes, perspective, and advanced shading techniques. In our classes, students move from simple sketching to professional-grade canvas composition.\n\nWe provide a nurturing environment where creativity is structured into skill. Whether you are a child picking up a crayon or an adult exploring oils, our curriculum is designed to help you see and capture the world correctly.",
+        icon: <Pencil className="w-8 h-8 text-primary" />,
+        image: drawing_main,
+        features: [
+            "Fundamental Sketching: Mastering lines, forms, and perspective.",
+            "Shading & Texture: Developing depth in grayscale and color.",
+            "Medium Exploration: Watercolors, Acrylics, Charcoal, and Oils.",
+            "Creative Composition: Learning to arrange subjects for maximum impact."
+        ],
+        whyChoose: [
+            { title: "Expert Instruction", desc: "Personalized mentorship from a BVA-qualified teacher." },
+            { title: "Professional Studio", desc: "Learn in a space designed for artistic focus." },
+            { title: "Portfolio Prep", desc: "Assistance in building art portfolios for future studies." },
+            { title: "All Age Batches", desc: "Specific groups focused on age-appropriate techniques." }
+        ],
+        offerings: [
+            "Elementary Grade Drawing",
+            "Intermediate & Advanced Shading",
+            "Acrylic & Oil Painting Workshops",
+            "Landscape & Still Life Studies",
+            "Yearly Student Art Exhibition"
+        ],
+        keyDetails: [
+            { label: "Mentor", value: "BVA Qualified Artist" },
+            { label: "Enrolment", value: "New Batches Every Month" },
+            { label: "Materials", value: "Studio kits available" }
+        ],
+        cta: {
+            text: "Unleash your inner artist. Join our drawing classes today!",
+            location: "Hosaritti Branch"
+        }
+    }
+];
+
+export const PROGRAMS = [...MY_SERVICES, ...CLASSES_OFFERED];
+
 export const WHY_CHOOSE_US = [
     {
         title: "Expert Instruction",
-        desc: "Led by Jayalakshmi, a Senior Mathematics Lecturer with M.Sc Mathematics.",
+        desc: "Led by Deepa S Ballari, a Senior Mathematics Lecturer with M.A., M.Ed.",
         icon: <Users className="w-6 h-6" />
     },
     {
@@ -266,16 +368,64 @@ export const WHY_CHOOSE_US = [
     }
 ];
 
-export const GALLERY_IMAGES = [
-    { src: "https://picsum.photos/seed/class1/600/400", category: "Classroom" },
-    { src: "https://picsum.photos/seed/class2/600/400", category: "Events" },
-    { src: "https://picsum.photos/seed/class3/600/400", category: "Classroom" },
-    { src: "https://picsum.photos/seed/class4/600/400", category: "Competitions" },
-    { src: "https://picsum.photos/seed/class5/600/400", category: "Students" },
-    { src: "https://picsum.photos/seed/class6/600/400", category: "Events" },
-    { src: "https://picsum.photos/seed/class7/600/400", category: "Competitions" },
-    { src: "https://picsum.photos/seed/class8/600/400", category: "Classroom" },
-    { src: "https://picsum.photos/seed/class9/600/400", category: "Students" },
-];
+// Automatically import all images and videos from assets/gallery subfolders
+const galleryModules = import.meta.glob('./assets/gallery/**/*.{jpeg,jpg,png,webp,mp4}', { eager: true, import: 'default' });
 
-export const GALLERY_CATEGORIES = ["All", "Classroom", "Events", "Competitions", "Students"];
+const categoryMap = {
+    'aari': 'Embroidery',
+    'abacus': 'Abacus',
+    'arts': 'Arts & Painting',
+    'mehandi': 'Mehandi',
+    'rangoli': 'Rangoli'
+};
+
+// Sort keys naturally (aari/image1, aari/image2, ...)
+const galleryKeys = Object.keys(galleryModules).sort((a, b) =>
+    a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' })
+);
+
+export const GALLERY_IMAGES = galleryKeys.map((key) => {
+    const src = galleryModules[key];
+    const parts = key.split('/');
+    // Get the second to last part which should be the folder name
+    const folder = parts[parts.length - 2];
+    return {
+        src,
+        category: categoryMap[folder] || 'General',
+        type: key.toLowerCase().endsWith('.mp4') ? 'video' : 'image'
+    };
+});
+
+// Extract unique categories and ensure "All" is first
+const categories = [...new Set(GALLERY_IMAGES.map(img => img.category))].sort();
+export const GALLERY_CATEGORIES = ["All", ...categories];
+
+// Create a diverse preview for the home page gallery (at least one from each category)
+const getDiversePreview = () => {
+    const cats = categories; // unique categories
+    const preview = [];
+    const seenCategories = new Set();
+    const usedIndices = new Set();
+
+    // 1. Pick first available from each category
+    cats.forEach(cat => {
+        const index = GALLERY_IMAGES.findIndex(img => img.category === cat);
+        if (index !== -1) {
+            preview.push(GALLERY_IMAGES[index]);
+            seenCategories.add(cat);
+            usedIndices.add(index);
+        }
+    });
+
+    // 2. Fill the rest with remaining items until we have 9
+    GALLERY_IMAGES.forEach((img, index) => {
+        if (preview.length < 9 && !usedIndices.has(index)) {
+            preview.push(img);
+            usedIndices.add(index);
+        }
+    });
+
+    return preview;
+};
+
+export const GALLERY_PREVIEW = getDiversePreview();

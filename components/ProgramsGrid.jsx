@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { PROGRAMS } from '../constants.jsx';
 
-const ProgramsGrid = () => {
+const ProgramsGrid = ({ data = PROGRAMS }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [itemsToShow, setItemsToShow] = useState(4);
 
@@ -24,7 +24,7 @@ const ProgramsGrid = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const maxIndex = Math.max(0, PROGRAMS.length - itemsToShow);
+    const maxIndex = Math.max(0, data.length - itemsToShow);
 
     const nextSlide = useCallback(() => {
         setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
@@ -64,7 +64,7 @@ const ProgramsGrid = () => {
                     animate={{ x: `-${currentIndex * (100 / itemsToShow)}%` }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 >
-                    {PROGRAMS.map((program, index) => (
+                    {data.map((program, index) => (
                         <motion.a
                             key={program.id}
                             href={`#details-${program.id}`}

@@ -42,9 +42,10 @@ const Header = () => {
 
     const navLinks = [
         { name: 'Home', href: '/#home' },
-        { name: 'Programs', href: '/#programs' },
-        { name: 'About Us', href: '/#about' },
         { name: 'Instructor', href: '/#instructor' },
+        { name: 'Classes', href: '/#classes' },
+        { name: 'Services', href: '/#services' },
+        { name: 'About Us', href: '/#about' },
         { name: 'Gallery', href: '/#gallery' },
     ];
 
@@ -95,10 +96,11 @@ const Header = () => {
                                 );
                             })}
                             <a
-                                href={`tel:${ACADEMY_INFO.phone}`}
-                                className="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-emerald-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+                                href={`https://wa.me/${ACADEMY_INFO.phone}`}
+                                className="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-emerald-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 "
+                                target="_blank"
                             >
-                                Call Now
+                                WhatsApp
                             </a>
                         </nav>
 
@@ -158,7 +160,7 @@ const Header = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={() => setIsCertModalOpen(false)}
-                        className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-black/80 backdrop-blur-sm"
+                        className="fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-8 bg-black/80 backdrop-blur-sm"
                     >
                         <motion.div
                             initial={{ scale: 0.9, opacity: 0, y: 20 }}

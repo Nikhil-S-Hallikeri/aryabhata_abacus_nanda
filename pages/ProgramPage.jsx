@@ -101,7 +101,7 @@ const ProgramPage = () => {
                     <div className="mt-20 space-y-20">
                         {/* Promo Banner */}
                         {program.promo && (
-                            <div className="bg-gradient-to-r from-rose-500 to-pink-600 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden shadow-2xl transform hover:scale-[1.01] transition-transform duration-300">
+                            <div className="bg-linear-to-r from-rose-500 to-pink-600 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden shadow-2xl transform hover:scale-[1.01] transition-transform duration-300">
                                 <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/20 rounded-full blur-3xl"></div>
                                 <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-yellow-400/20 rounded-full blur-3xl"></div>
 
@@ -187,7 +187,7 @@ const ProgramPage = () => {
                         {/* Why Choose Section */}
                         {program.whyChoose && (
                             <section>
-                                <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Why Aryabhata Abacus?</h2>
+                                <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Why Choose Our {program.title}?</h2>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     {program.whyChoose.map((item, index) => (
                                         <div key={index} className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
