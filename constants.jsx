@@ -344,7 +344,7 @@ export const PROGRAMS = [...MY_SERVICES, ...CLASSES_OFFERED];
 export const WHY_CHOOSE_US = [
     {
         title: "Expert Instruction",
-        desc: "Led by Deepa S Ballari, a Senior Mathematics Lecturer with M.A., M.Ed.",
+        desc: "Led by Nanda B Hattikoti, a BVA artist with years of creative and educational expertise.",
         icon: <Users className="w-6 h-6" />
     },
     {

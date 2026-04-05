@@ -76,7 +76,7 @@ const AboutAcademy = () => {
                                 Located in the heart of Haveri, {ACADEMY_INFO.name} has been a beacon of academic excellence for years. Our mission is to provide students with the tools they need to succeed in an ever-evolving world.
                             </p>
                             <p>
-                                Affiliated with <strong>Aryabhata Vedic Maths</strong>, we bring ancient wisdom combined with modern teaching methodologies. We don't just teach subjects; we foster curiosity, discipline, and a love for learning.
+                                Affiliated with <strong>Aryabhata Abacus & Vedic Maths</strong>, we bring ancient wisdom combined with modern teaching methodologies. We don't just teach subjects; we foster curiosity, discipline, and a love for learning.
                             </p>
                             <p>
                                 Our institution is <strong>ISO Certified</strong>, ensuring that your child receives education that meets international quality standards. From foundational school tuitions to competitive Navodaya coaching, we cover it all.
