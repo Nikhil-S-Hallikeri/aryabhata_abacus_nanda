@@ -29,7 +29,8 @@ export const ACADEMY_INFO = {
     role: "Lecturer / Artist",
     affiliations: ["Aryabhata Abacus & Vedic Maths", "ISO Certified Company"],
     phone: "+91 81471 46702",
-    whatsapp: "+91 81471 46702"
+    phone_raw: "918147146702",
+    whatsapp: "918147146702"
 };
 
 export const MY_SERVICES = [

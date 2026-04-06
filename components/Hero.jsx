@@ -65,7 +65,7 @@ const Hero = () => {
                                 WhatsApp Us
                             </a>
                             <a
-                                href="tel:+918147146702"
+                                href={`tel:${ACADEMY_INFO.phone_raw}`}
                                 className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white text-gray-900 border-2 border-gray-100 px-8 py-4 rounded-2xl font-bold hover:border-emerald-500 hover:text-emerald-600 transition-all shadow-sm"
                             >
                                 <Phone className="w-5 h-5" />

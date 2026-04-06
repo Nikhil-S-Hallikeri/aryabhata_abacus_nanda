@@ -62,7 +62,7 @@ const Footer = () => {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="text-primary w-5 h-5 flex-shrink-0" />
-                                <a href={`tel:${ACADEMY_INFO.phone}`} className="hover:text-primary">{ACADEMY_INFO.phone}</a>
+                                <a href={`tel:${ACADEMY_INFO.phone_raw}`} className="hover:text-primary">{ACADEMY_INFO.phone}</a>
                             </li>
                             <li className="flex items-center gap-3">
                                 <MessageCircle className="text-primary w-5 h-5 flex-shrink-0" />

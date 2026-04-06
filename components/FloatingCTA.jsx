@@ -20,7 +20,7 @@ const FloatingCTA = () => {
             </a>
 
             <a
-                href={`tel:${ACADEMY_INFO.phone}`}
+                href={`tel:${ACADEMY_INFO.phone_raw}`}
                 className="w-10 h-10 md:w-14 md:h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:bg-emerald-700 transition-all transform hover:scale-110 active:scale-95 group relative"
                 aria-label="Call Us"
             >

@@ -96,7 +96,7 @@ const Header = () => {
                                 );
                             })}
                             <a
-                                href={`https://wa.me/${ACADEMY_INFO.phone}`}
+                                href={`https://wa.me/${ACADEMY_INFO.whatsapp}`}
                                 className="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-emerald-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 "
                                 target="_blank"
                             >
@@ -141,7 +141,7 @@ const Header = () => {
                                     );
                                 })}
                                 <a
-                                    href={`tel:${ACADEMY_INFO.phone}`}
+                                    href={`tel:${ACADEMY_INFO.phone_raw}`}
                                     className="block w-full text-center bg-primary text-white py-3 rounded-xl font-semibold"
                                 >
                                     Connect with us
